@@ -1,0 +1,253 @@
+/* ============================================================
+   KINETIC ARCHITECT — Global Design System
+   ============================================================ */
+
+/* Google Fonts are loaded via next/font — no @import needed */
+
+:root {
+  /* ── Surfaces ── */
+  --bg:                  #0a0e14;
+  --surface:             #0a0e14;
+  --surface-low:         #0f141a;
+  --surface-container:   #151a21;
+  --surface-high:        #1b2028;
+  --surface-highest:     #20262f;
+  --surface-bright:      #262c36;
+  --surface-variant:     #20262f;
+
+  /* ── On-surfaces ── */
+  --on-surface:          #f1f3fc;
+  --on-surface-muted:    rgba(241,243,252,0.6);
+  --on-surface-faint:    rgba(241,243,252,0.35);
+  --on-surface-variant:  #a8abb3;
+
+  /* ── Accents ── */
+  --primary:             #a5a5ff;
+  --primary-container:   #9695ff;
+  --primary-dim:         #9392ff;
+  --secondary:           #5f9eff;
+  --tertiary:            #d277ff;
+
+  /* ── Outlines ── */
+  --outline:             #72757d;
+  --outline-variant:     rgba(68,72,79,0.15);
+
+  /* ── Fonts ── */
+  --font-display:        var(--font-manrope), 'Manrope', sans-serif;
+  --font-body:           var(--font-inter), 'Inter', sans-serif;
+  --font-label:          var(--font-space-grotesk), 'Space Grotesk', monospace;
+
+  /* ── Spacing ── */
+  --section-pad-v:       clamp(80px, 10vw, 140px);
+  --section-pad-h:       clamp(20px, 6vw, 100px);
+  --container-max:       1280px;
+  --nav-h:               68px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--surface-bright);
+  border-radius: 3px;
+}
+
+/* ── Typography Scale ── */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--on-surface-muted);
+}
+
+.label {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+/* ── Section Base ── */
+.section {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Section Label ── */
+.section-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-eyebrow::before {
+  content: '//';
+  opacity: 0.5;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  background: var(--on-surface);
+  color: var(--bg);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  box-shadow: 0 0 32px rgba(165,165,255,0.25);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--on-surface);
+  border: 1px solid rgba(241,243,252,0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-ghost:hover {
+  background: rgba(241,243,252,0.06);
+  border-color: rgba(241,243,252,0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Glass ── */
+.glass {
+  background: rgba(32, 38, 47, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Chip ── */
+.chip {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: var(--surface-variant);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline-variant);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: var(--surface-high);
+  color: var(--on-surface);
+  border-color: rgba(165,165,255,0.2);
+}
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--outline-variant);
+}

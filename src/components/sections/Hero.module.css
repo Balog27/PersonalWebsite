@@ -1,0 +1,70 @@
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1.5rem;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  color: var(--on-surface-variant);
+  letter-spacing: 0.14em;
+}
+
+.headline {
+  color: var(--on-surface);
+  text-shadow: 0 0 80px rgba(10,14,20,0.9);
+}
+
+.headlineAccent {
+  color: rgba(241,243,252,0.55);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+  transform-origin: top;
+}
+
+.scrollLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+}

@@ -1,0 +1,141 @@
+.education {
+  background: var(--bg);
+}
+
+.heading {
+  color: var(--on-surface);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.colLabel {
+  color: var(--primary);
+  letter-spacing: 0.12em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--outline-variant);
+}
+
+.timelineItem {
+  position: relative;
+  padding: 0 0 2.5rem 1.75rem;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 12px rgba(165,165,255,0.4);
+  flex-shrink: 0;
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.timelineYear {
+  color: var(--on-surface-faint);
+  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+}
+
+.timelineInstitution {
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+.timelineTitle {
+  color: var(--on-surface);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+.timelineDesc {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  max-width: 400px;
+}
+
+/* Cert cards */
+.certList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certCard {
+  background: var(--surface-container);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--outline-variant);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.certCard:hover {
+  background: var(--surface-high);
+  border-color: rgba(165,165,255,0.2);
+}
+
+.certHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certIssuer {
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+.certYear {
+  color: var(--on-surface-faint);
+  font-size: 0.65rem;
+}
+
+.certTitle {
+  color: var(--on-surface);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.certDesc {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
