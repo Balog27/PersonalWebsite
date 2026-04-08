@@ -44,6 +44,35 @@
   --nav-h:               68px;
 }
 
+[data-theme='light'] {
+  /* ── Surfaces ── */
+  --bg:                  #fbfbfb;
+  --surface:             #ffffff;
+  --surface-low:         #f3f4f6;
+  --surface-container:   #e5e7eb;
+  --surface-high:        #d1d5db;
+  --surface-highest:     #9ca3af;
+  --surface-bright:      #ffffff;
+  --surface-variant:     #f3f4f6;
+
+  /* ── On-surfaces ── */
+  --on-surface:          #0a0e14;
+  --on-surface-muted:    rgba(10, 14, 20, 0.75);
+  --on-surface-faint:    rgba(10, 14, 20, 0.4);
+  --on-surface-variant:  #374151;
+
+  /* ── Accents ── */
+  --primary:             #2563eb;
+  --primary-container:   #dbeafe;
+  --primary-dim:         #1d4ed8;
+  --secondary:           #0ea5e9;
+  --tertiary:            #d946ef;
+
+  /* ── Outlines ── */
+  --outline:             #9ca3af;
+  --outline-variant:     rgba(0, 0, 0, 0.1);
+}
+
 /* ── Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -190,8 +219,8 @@ button {
 }
 
 .btn-primary:hover {
-  background: #ffffff;
-  box-shadow: 0 0 32px rgba(165,165,255,0.25);
+  background: var(--surface-highest);
+  box-shadow: 0 0 32px var(--outline-variant);
   transform: translateY(-1px);
 }
 
@@ -205,7 +234,7 @@ button {
   border-radius: 4px;
   background: transparent;
   color: var(--on-surface);
-  border: 1px solid rgba(241,243,252,0.2);
+  border: 1px solid var(--outline-variant);
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
@@ -213,8 +242,8 @@ button {
 }
 
 .btn-ghost:hover {
-  background: rgba(241,243,252,0.06);
-  border-color: rgba(241,243,252,0.4);
+  background: var(--outline-variant);
+  border-color: var(--outline);
   transform: translateY(-1px);
 }
 
@@ -243,7 +272,7 @@ button {
 .chip:hover {
   background: var(--surface-high);
   color: var(--on-surface);
-  border-color: rgba(165,165,255,0.2);
+  border-color: var(--primary);
 }
 
 /* ── Divider ── */

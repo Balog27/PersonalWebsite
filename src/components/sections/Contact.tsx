@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionReveal from '@/components/SectionReveal';
+import CountUp from '@/components/ui/CountUp';
 import styles from './Contact.module.css';
 
 const SOCIALS = [
@@ -14,11 +15,40 @@ const SOCIALS = [
 export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, send to an API
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          // Replace with your Web3Forms access key
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE',
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong submitting the form.');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      alert('Failed to send message. Please check your network connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,6 +70,15 @@ export default function Contact() {
                 Whether you have a project in mind, a question about my work, or just
                 want to talk engineering — I&apos;m always open to a conversation.
               </p>
+            </SectionReveal>
+
+            <SectionReveal delay={0.15}>
+              <div style={{ margin: '2rem 0', display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--accent)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+                  <CountUp to={75000} duration={2.5} separator="," />+
+                </span>
+                <span className="body-lg" style={{ opacity: 0.8, fontWeight: 500 }}>lines of code shipped</span>
+              </div>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
@@ -65,7 +104,7 @@ export default function Contact() {
                 id="contact-download-cv"
                 href="/cv.pdf"
                 className={`btn-ghost ${styles.cvBtn}`}
-                download
+                download="CV-Balog-David.pdf"
               >
                 Download CV ↓
               </a>
@@ -136,10 +175,12 @@ export default function Contact() {
                 <button
                   id="contact-submit"
                   type="submit"
+                  disabled={isSubmitting}
                   className={`btn-primary ${styles.submitBtn}`}
+                  style={{ opacity: isSubmitting ? 0.7 : 1 }}
                   suppressHydrationWarning
                 >
-                  Send Transmission →
+                  {isSubmitting ? 'Sending...' : 'Send Transmission →'}
                 </button>
               </form>
             )}

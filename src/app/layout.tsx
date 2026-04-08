@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Manrope, Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -37,8 +38,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${manrope.variable} ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={true}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

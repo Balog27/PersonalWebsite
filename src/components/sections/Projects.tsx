@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import SectionReveal from '@/components/SectionReveal';
 import styles from './Projects.module.css';
 
@@ -10,11 +11,22 @@ const PROJECTS = [
     tag: 'Full-Stack / Next.js',
     title: 'ZETTACARS',
     description:
-      'A multilingual Next.js app for vehicle rentals and airport transfers with dynamic pricing (Convex backend + Google Maps distance calculations) and admin pricing controls.',
-    tech: ['Next.js', 'Convex', 'Google Maps API', 'React'],
-    github: 'https://www.zettacarrental.com/', // Using demo for github if no github provided
+      'A comprehensive, multilingual vehicle rental and airport transfer platform. It features real-time dynamic pricing, administrative controls, and seamless iOS integration to deliver a premium user experience. Engineered with a robust backend, advanced Mapbox/Google Maps distance calculations, and scalable architecture.',
+    tech: ['Next.js', 'Convex', 'Mapbox', 'Google Maps', 'Resend', 'APIs'],
+    github: 'https://github.com/Balog27/Zettacarrental', // Using demo for github if no github provided
     demo: 'https://www.zettacarrental.com/',
-    visual: 'radar',
+    image: '/projects/zetta-cars.png',
+  },
+  {
+    id: 'fridge-ai',
+    tag: 'Cross-Platform AI App',
+    title: 'FRIDGE AI',
+    description:
+      'A dual mobile and web application powered by machine learning that intelligently catalogs your refrigerator inventory. It tracks ingredient stock levels, monitors expiration dates, and leverages AI to generate custom intuitive recipe suggestions strictly based on your available items.',
+    tech: ['React Native', 'Next.js', 'Python / AI', 'Vercel', 'Convex', 'MapBox', 'ImageRecognition', 'AppleIntegration'],
+    github: 'https://github.com/Balog27/licenta',
+    demo: 'https://licenta-balog27.vercel.app',
+    image: '/projects/fridge-ai.png',
   },
   {
     id: 'bike-shop',
@@ -37,17 +49,6 @@ const PROJECTS = [
     github: 'https://github.com/Balog27/YouTubeToSpotify',
     demo: null,
     visual: 'neural',
-  },
-  {
-    id: 'file-editor',
-    tag: 'Tooling / Python',
-    title: 'FILE_EDITOR',
-    description:
-      'A Python-based file management application that allows users to seamlessly navigate, sort, rename, move, copy, and remove files and directories.',
-    tech: ['Python', 'OS Module', 'File Management'],
-    github: 'https://github.com/Balog27/fileEditor',
-    demo: null,
-    visual: 'radar',
   },
 ];
 
@@ -80,11 +81,11 @@ function ProjectVisual({ type }: { type: string }) {
       <div className={styles.visual}>
         <svg viewBox="0 0 200 200" className={styles.neuralSvg}>
           {/* Connections */}
-          {[[40,60,100,40],[40,100,100,100],[40,140,100,160],[100,40,160,60],[100,100,160,100],[100,160,160,140]].map(([x1,y1,x2,y2],i) => (
+          {[[40, 60, 100, 40], [40, 100, 100, 100], [40, 140, 100, 160], [100, 40, 160, 60], [100, 100, 160, 100], [100, 160, 160, 140]].map(([x1, y1, x2, y2], i) => (
             <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} className={styles.neuralEdge} />
           ))}
           {/* Nodes */}
-          {[[40,60],[40,100],[40,140],[100,40],[100,100],[100,160],[160,60],[160,100],[160,140]].map(([cx,cy],i) => (
+          {[[40, 60], [40, 100], [40, 140], [100, 40], [100, 100], [100, 160], [160, 60], [160, 100], [160, 140]].map(([cx, cy], i) => (
             <circle key={i} cx={cx} cy={cy} r="6" className={styles.neuralNode} style={{ animationDelay: `${i * 0.15}s` }} />
           ))}
         </svg>
@@ -95,11 +96,11 @@ function ProjectVisual({ type }: { type: string }) {
   return (
     <div className={styles.visual}>
       <svg viewBox="0 0 200 200" className={styles.meshSvg}>
-        {[[40,40,160,40],[40,100,160,100],[40,160,160,160],[40,40,40,160],[100,40,100,160],[160,40,160,160],
-          [40,40,100,100],[100,40,160,100],[40,100,100,160],[100,100,160,160]].map(([x1,y1,x2,y2],i) => (
+        {[[40, 40, 160, 40], [40, 100, 160, 100], [40, 160, 160, 160], [40, 40, 40, 160], [100, 40, 100, 160], [160, 40, 160, 160],
+        [40, 40, 100, 100], [100, 40, 160, 100], [40, 100, 100, 160], [100, 100, 160, 160]].map(([x1, y1, x2, y2], i) => (
           <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} className={styles.meshLine} />
         ))}
-        {[[40,40],[100,40],[160,40],[40,100],[100,100],[160,100],[40,160],[100,160],[160,160]].map(([cx,cy],i) => (
+        {[[40, 40], [100, 40], [160, 40], [40, 100], [100, 100], [160, 100], [40, 160], [100, 160], [160, 160]].map(([cx, cy], i) => (
           <circle key={i} cx={cx} cy={cy} r="5" className={styles.meshNode} style={{ animationDelay: `${i * 0.1}s` }} />
         ))}
       </svg>
@@ -125,9 +126,21 @@ export default function Projects() {
                 transition={{ duration: 0.25, ease: 'easeOut' }}
               >
                 {/* Visual side */}
-                <div className={styles.cardVisual}>
-                  <span className={`label ${styles.cardTag}`}>{project.tag}</span>
-                  <ProjectVisual type={project.visual} />
+                <div className={styles.cardVisual} style={project.image ? { padding: 0 } : {}}>
+                  <span className={`label ${styles.cardTag}`} style={project.image ? { position: 'absolute', top: '20px', left: '20px', zIndex: 10 } : {}}>{project.tag}</span>
+                  {project.image ? (
+                    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                      <Image 
+                        src={project.image} 
+                        alt={project.title} 
+                        fill 
+                        style={{ objectFit: 'cover' }} 
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                  ) : (
+                    <ProjectVisual type={project.visual} />
+                  )}
                 </div>
 
                 {/* Content side */}

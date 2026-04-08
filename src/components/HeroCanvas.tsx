@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import styles from './HeroCanvas.module.css';
 
-const TOTAL_FRAMES = 224;
+const TOTAL_FRAMES = 120;
 const FRAME_PATH = (i: number) =>
-  `/HeroSection1/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+  `/HeroSection2/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
 
 export default function HeroCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -145,7 +145,7 @@ export default function HeroCanvas() {
   });
 
   return (
-    <div ref={containerRef} className={styles.scrollContainer}>
+    <div ref={containerRef} className={styles.scrollContainer} style={{ position: 'relative' }}>
       <div className={styles.sticky}>
         <canvas ref={canvasRef} className={styles.canvas} />
         {/* Vignette overlay */}

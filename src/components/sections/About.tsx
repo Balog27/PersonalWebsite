@@ -8,22 +8,31 @@ export default function About() {
         {/* Left column */}
         <div className={styles.left}>
           <SectionReveal delay={0}>
-            <p className="section-eyebrow">The Mindset</p>
-            <h2 className={`display-lg ${styles.heading}`}>
-              Building at the<br />
-              <span className={styles.headingAccent}>Edge of Logic.</span>
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem' }}>
+              <img 
+                src="https://ui-avatars.com/api/?name=David+Balog&background=0D8ABC&color=fff&size=200" 
+                alt="David Balog" 
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--accent)' }} 
+              />
+              <div>
+                <p className="section-eyebrow" style={{ marginBottom: '0.25rem' }}>The Mindset</p>
+                <h2 className={`display-lg ${styles.heading}`} style={{ margin: 0 }}>
+                  Building at the<br />
+                  <span className={styles.headingAccent}>Edge of Logic.</span>
+                </h2>
+              </div>
+            </div>
           </SectionReveal>
 
           <SectionReveal delay={0.15}>
             <p className={`body-lg ${styles.paragraph}`}>
-              I am a Junior Software Developer with experience in C#, .NET, and WPF, 
-              which I attained from my internship and continued to develop at my current workplace. 
-              I have been working on internal projects, designing user interfaces, and supporting existing functionality, 
+              I am a Junior Software Developer with experience in C#, .NET, and WPF, React, Next.js,
+              which I attained from my internship and continued to develop at my current workplace.
+              I have been working on internal projects, designing user interfaces, and supporting existing functionality,
               all while developing best practices with clean code and software designs.
             </p>
             <p className={`body-lg ${styles.paragraph}`} style={{ marginTop: '1rem' }}>
-              I am well-suited to working with a team, utilizing Agile methodologies, 
+              I am well-suited to working with a team, utilizing Agile methodologies,
               and participating throughout the entire software developmental process.
             </p>
           </SectionReveal>
@@ -56,10 +65,12 @@ export default function About() {
               </div>
               <pre className={styles.code}>{`const developer = {
   name: "David-George Balog",
-  role: "Junior Software Developer",
+  role: "Software Developer",
   focus: [
     "C# .NET & Blazor",
     "React & Next.js",
+    "Backend Systems",
+    "Frontend Craft",
     "Clean Architecture",
   ],
   currentlyBuilding: "ZettaCars",
