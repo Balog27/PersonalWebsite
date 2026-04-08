@@ -52,7 +52,7 @@ const PROJECTS = [
   },
 ];
 
-function ProjectVisual({ type }: { type: string }) {
+function ProjectVisual({ type }: { type?: string }) {
   if (type === 'radar') {
     return (
       <div className={styles.visual}>
@@ -127,7 +127,6 @@ export default function Projects() {
               >
                 {/* Visual side */}
                 <div className={styles.cardVisual} style={project.image ? { padding: 0 } : {}}>
-                  <span className={`label ${styles.cardTag}`} style={project.image ? { position: 'absolute', top: '20px', left: '20px', zIndex: 10 } : {}}>{project.tag}</span>
                   {project.image ? (
                     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                       <Image 
@@ -145,6 +144,7 @@ export default function Projects() {
 
                 {/* Content side */}
                 <div className={styles.cardContent}>
+                  <span className={`label ${styles.cardTag}`}>{project.tag}</span>
                   <h3 className={`headline ${styles.cardTitle}`}>{project.title}</h3>
                   <p className={`body-lg ${styles.cardDesc}`}>{project.description}</p>
 

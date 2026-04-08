@@ -107,7 +107,7 @@ export default function Navbar() {
               style={{ 
                 background: 'transparent', 
                 border: 'none', 
-                color: 'var(--on-surface)',
+                color: '#ffffff',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',

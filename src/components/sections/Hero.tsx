@@ -41,7 +41,7 @@ export default function Hero() {
         >
           <button
             id="hero-cta-projects"
-            className="btn-primary"
+            className={`btn-primary ${styles.heroBtnPrimary}`}
             onClick={() => handleScroll('#projects')}
             suppressHydrationWarning
           >
@@ -49,7 +49,7 @@ export default function Hero() {
           </button>
           <button
             id="hero-cta-contact"
-            className="btn-ghost"
+            className={`btn-ghost ${styles.heroBtnGhost}`}
             onClick={() => handleScroll('#contact')}
             suppressHydrationWarning
           >

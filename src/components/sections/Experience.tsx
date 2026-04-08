@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import SectionReveal from '@/components/SectionReveal';
 import styles from './Education.module.css';
 
-const Galaxy = dynamic(() => import('@/components/Galaxy'), { ssr: false });
+const BikeAnimation = dynamic(() => import('@/components/BikeAnimation'), { ssr: false });
 
 const EXPERIENCE = [
   {
@@ -23,24 +23,6 @@ export default function Experience() {
   return (
     <section id="experience" className={`section ${styles.education}`} style={{ position: 'relative', overflow: 'hidden' }}>
       
-      {/* Galaxy Background - Dark, slow, professional */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.8 }}>
-        <Galaxy 
-          mouseRepulsion={true}
-          mouseInteraction={true}
-          density={0.6}
-          glowIntensity={0.15}
-          saturation={0}
-          hueShift={100}
-          twinkleIntensity={0.25}
-          rotationSpeed={0.03}
-          repulsionStrength={1.5}
-          autoCenterRepulsion={0}
-          starSpeed={0.3}
-          speed={0.4}
-        />
-      </div>
-
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <SectionReveal>
           <p className="section-eyebrow">Professional Path</p>
@@ -48,7 +30,7 @@ export default function Experience() {
         </SectionReveal>
 
         <div className={styles.grid}>
-          <div className={styles.col} style={{ gridColumn: '1 / -1', maxWidth: '800px' }}>
+          <div className={styles.col}>
             <div className={styles.timeline}>
               {EXPERIENCE.map((item, i) => (
                 <SectionReveal key={i} delay={0.15 + i * 0.1}>
@@ -64,6 +46,12 @@ export default function Experience() {
                 </SectionReveal>
               ))}
             </div>
+          </div>
+          
+          <div className={styles.col} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: '120px' }}>
+            <SectionReveal delay={0.3}>
+              <BikeAnimation />
+            </SectionReveal>
           </div>
         </div>
       </div>

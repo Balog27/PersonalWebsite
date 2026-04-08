@@ -48,11 +48,9 @@
 }
 
 .cardTag {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
   color: var(--primary);
   letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
 }
 
 .visual {

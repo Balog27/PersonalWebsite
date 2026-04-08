@@ -57,9 +57,9 @@
 
   /* ── On-surfaces ── */
   --on-surface:          #0a0e14;
-  --on-surface-muted:    rgba(10, 14, 20, 0.75);
-  --on-surface-faint:    rgba(10, 14, 20, 0.4);
-  --on-surface-variant:  #374151;
+  --on-surface-muted:    rgba(10, 14, 20, 0.85);
+  --on-surface-faint:    rgba(10, 14, 20, 0.65);
+  --on-surface-variant:  #1f2937;
 
   /* ── Accents ── */
   --primary:             #2563eb;

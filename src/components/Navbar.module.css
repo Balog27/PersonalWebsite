@@ -40,7 +40,7 @@
   font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--on-surface);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--on-surface-variant);
+  color: #a8abb3;
   padding: 0.5rem 0.85rem;
   border-radius: 4px;
   position: relative;
@@ -87,7 +87,7 @@
 }
 
 .link:hover {
-  color: var(--on-surface);
+  color: #ffffff;
 }
 
 .link:hover::after {
@@ -95,7 +95,7 @@
 }
 
 .linkActive {
-  color: var(--on-surface) !important;
+  color: #ffffff !important;
 }
 
 .linkActive::after {
@@ -107,6 +107,13 @@
   flex-shrink: 0;
   padding: 0.6rem 1.4rem !important;
   font-size: 0.72rem !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+.cta:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.4) !important;
 }
 
 /* Hamburger */
@@ -122,7 +129,7 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--on-surface);
+  background: #ffffff;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
