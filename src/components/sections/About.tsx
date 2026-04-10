@@ -9,10 +9,10 @@ export default function About() {
         <div className={styles.left}>
           <SectionReveal delay={0}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem' }}>
-              <img 
-                src="https://ui-avatars.com/api/?name=David+Balog&background=0D8ABC&color=fff&size=200" 
-                alt="David Balog" 
-                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--accent)' }} 
+              <img
+                src="/profile.jpeg"
+                alt="David Balog"
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--accent)' }}
               />
               <div>
                 <p className="section-eyebrow" style={{ marginBottom: '0.25rem' }}>The Mindset</p>
@@ -26,14 +26,23 @@ export default function About() {
 
           <SectionReveal delay={0.15}>
             <p className={`body-lg ${styles.paragraph}`}>
-              I am a Junior Software Developer with experience in C#, .NET, and WPF, React, Next.js,
-              which I attained from my internship and continued to develop at my current workplace.
-              I have been working on internal projects, designing user interfaces, and supporting existing functionality,
-              all while developing best practices with clean code and software designs.
+              I am a Junior Software Developer with hands-on experience building and maintaining
+              internal applications using C#, .NET, Blazor, WPF, React, and Next.js, a stack I have
+              developed both through formal internship training and continued growth in a professional
+              setting. I have been involved across the full development lifecycle, from designing intuitive
+              user interfaces to implementing robust application logic and improving existing systems.
             </p>
             <p className={`body-lg ${styles.paragraph}`} style={{ marginTop: '1rem' }}>
-              I am well-suited to working with a team, utilizing Agile methodologies,
-              and participating throughout the entire software developmental process.
+              I am comfortable taking full ownership of a project as the sole developer, or collaborating
+              within a small Scrum team. Beyond writing code, I actively participate in requirements
+              discussions, conduct code reviews, and contribute to technical documentation, bringing
+              both engineering discipline and communication clarity to every project I'm part of.
+            </p>
+            <p className={`body-lg ${styles.paragraph}`} style={{ marginTop: '1rem' }}>
+              I pick up new technologies quickly in practice, and I am always building something, driven by a genuine desire to create things that are useful, well-engineered, and polished. I bring a consistent focus on clean, maintainable code and take pride in the craft of software development.
+            </p>
+            <p className={`body-lg ${styles.paragraph}`} style={{ marginTop: '1rem' }}>
+              Looking ahead, I am keen to keep growing in a junior role where I can deepen my expertise, contribute meaningfully to a professional team, and continue building software that makes an impact.
             </p>
           </SectionReveal>
 

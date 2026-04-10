@@ -4,13 +4,13 @@ import { useEffect, useRef } from 'react';
 
 const TOTAL_FRAMES = 120;
 const FRAME_PATH = (i: number) =>
-  `/HeroSection2/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+  `/HeroSection3/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
 
 export default function BikeAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const frameRef = useRef(0);
-  const reqRef = useRef<number>(null);
+  const reqRef = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;

@@ -97,7 +97,7 @@ export default function HeroCanvas() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+  useMotionValueEvent(scrollYProgress, 'change', (latest: number) => {
     const frameIndex = Math.min(
       TOTAL_FRAMES - 1,
       Math.max(0, Math.round(latest * (TOTAL_FRAMES - 1)))

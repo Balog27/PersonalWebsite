@@ -29,6 +29,17 @@ const PROJECTS = [
     image: '/projects/fridge-ai.png',
   },
   {
+    id: 'shisha-app',
+    tag: 'Mobile / React Native',
+    title: 'SHISHA APP',
+    description:
+      'A full-featured e-commerce and rental mobile app for shisha enthusiasts, built with React Native and Expo. Features product browsing with sorting, shopping cart, order history with real-time status tracking, user profiles, and a dedicated admin panel for catalog management — all wrapped in a sleek dark-themed UI.',
+    tech: ['React Native', 'Expo', 'TypeScript', 'React 19'],
+    github: 'https://github.com/Balog27/NarghileaShop',
+    demo: null,
+    visual: 'neural',
+  },
+  {
     id: 'bike-shop',
     tag: 'E-commerce / Flask',
     title: 'BIKESHOP',

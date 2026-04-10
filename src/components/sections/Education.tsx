@@ -37,6 +37,12 @@ const CERTIFICATIONS = [
     year: 'Completed',
     desc: 'Database programming, querying, and management.',
   },
+  {
+    issuer: 'Anthropic',
+    title: 'Anthropic AI Course',
+    year: 'Completed',
+    desc: 'Advanced prompt engineering and AI integration concepts.',
+  },
 ];
 
 // Experience moved to Experience.tsx
