@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-const TOTAL_FRAMES = 120;
+const TOTAL_FRAMES = 161;
 const FRAME_PATH = (i: number) =>
   `/HeroSection3/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
 
