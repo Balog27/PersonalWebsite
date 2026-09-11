@@ -1,0 +1,126 @@
+export const PROJECTS = [
+    {
+        id: 'atelier-luchito',
+        tag: 'E-commerce / React',
+        title: 'ATELIER LUCHITO',
+        description: 'An e-commerce storefront with product colour and size variants, category filtering, guest and signed-in shopping carts, and cash-on-delivery checkout. Includes an administration panel for managing the catalogue and orders, with Convex handling the database and server logic and Clerk providing authentication.',
+        tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Convex', 'Clerk'],
+        github: 'https://github.com/Balog27/Atelier-Luchiano',
+        demo: null,
+    },
+    {
+        id: 'quietscore',
+        tag: 'Geospatial / Full-Stack',
+        title: 'QUIETSCORE',
+        description: 'A property noise guidance platform that turns official environmental noise maps into an understandable QuietScore, starting with Cluj-Napoca. Combines a bilingual React interface, a Fastify API, and a reproducible geospatial data pipeline backed by PostgreSQL and PostGIS. Reports long-term modelled noise rather than live measurements, with explicit data coverage and provenance.',
+        tech: ['React', 'TypeScript', 'Fastify', 'PostgreSQL', 'PostGIS', 'Supabase'],
+        github: 'https://github.com/Balog27/QuietScore',
+        demo: null,
+    },
+    {
+        id: 'zetta-cars',
+        tag: 'Full-Stack / Next.js',
+        title: 'ZETTACARS',
+        description: 'A comprehensive, multilingual vehicle rental and airport transfer platform. It features real-time dynamic pricing, administrative controls, and seamless iOS integration to deliver a premium user experience. Engineered with a robust backend, advanced Mapbox/Google Maps distance calculations, and scalable architecture.',
+        tech: ['Next.js', 'Convex', 'Mapbox', 'Google Maps', 'Resend', 'APIs'],
+        github: 'https://github.com/Balog27/Zettacarrental', // Using demo for github if no github provided
+        demo: 'https://www.zettacarrental.com/',
+        image: '/projects/zetta-cars.png',
+    },
+    {
+        id: 'fridge-ai',
+        tag: 'Cross-Platform AI App',
+        title: 'FRIDGE AI',
+        description: 'A dual mobile and web application powered by machine learning that intelligently catalogs your refrigerator inventory. It tracks ingredient stock levels, monitors expiration dates, and leverages AI to generate custom intuitive recipe suggestions strictly based on your available items.',
+        tech: ['React Native', 'Next.js', 'Python / AI', 'Vercel', 'Convex', 'MapBox', 'ImageRecognition', 'AppleIntegration'],
+        github: 'https://github.com/Balog27/licenta',
+        demo: 'https://licenta-balog27.vercel.app',
+        image: '/projects/fridge-ai.png',
+    },
+    {
+        id: 'shisha-app',
+        tag: 'Mobile / React Native',
+        title: 'SHISHA APP',
+        description: 'A full-featured e-commerce and rental mobile app for shisha enthusiasts, built with React Native and Expo. Features product browsing with sorting, shopping cart, order history with real-time status tracking, user profiles, and a dedicated admin panel for catalog management — all wrapped in a sleek dark-themed UI.',
+        tech: ['React Native', 'Expo', 'TypeScript', 'React 19'],
+        github: 'https://github.com/Balog27/NarghileaShop',
+        demo: null,
+        visual: 'neural',
+    },
+    {
+        id: 'bike-shop',
+        tag: 'E-commerce / Flask',
+        title: 'BIKESHOP',
+        description: 'A Flask-based E-commerce web application featuring search, filtering, pagination, cart management, and user authentication for a motorbike shop.',
+        tech: ['Python', 'Flask', 'E-commerce', 'Auth'],
+        github: 'https://github.com/Balog27/bikeShop/tree/correct',
+        demo: null,
+        visual: 'mesh',
+    },
+    {
+        id: 'youtube-to-spotify',
+        tag: 'API / Python',
+        title: 'YOUTUBE_TO_SPOTIFY',
+        description: 'Extracts song information from YouTube playlists and adds the songs to a Spotify account using Python, Flask, Spotipy, Google APIs, and yt-dlp.',
+        tech: ['Python', 'Flask', 'Spotipy', 'yt-dlp'],
+        github: 'https://github.com/Balog27/YouTubeToSpotify',
+        demo: null,
+        visual: 'neural',
+    },
+];
+export const EXPERIENCE = [
+    {
+        role: 'Junior Developer, C# .NET & Blazor',
+        company: 'ArtSoft Consult',
+        duration: 'Sept 2025 – Present',
+        desc: 'Developing web applications using .NET, Blazor, Entity Framework, MudBlazor and REST APIs. Implementing components, forms, and validation logic for internal tools. Writing clean, maintainable code and participating in code reviews.',
+    },
+    {
+        role: 'Internship, C# .NET & WPF',
+        company: 'ArtSoft Consult',
+        duration: 'July 2025 – Aug 2025',
+        desc: 'Built desktop application features using C#, .NET, and WPF. Implemented UI components, data bindings, and MVVM patterns. Gained experience with Git workflows, debugging tools, and Agile development.',
+    },
+];
+export const EDUCATION = [
+    {
+        type: 'degree',
+        year: '2023 — Present',
+        institution: 'Universitatea Babeș-Bolyai Cluj-Napoca',
+        title: 'Computer Science',
+        desc: 'Actively pursuing a degree in Computer Science with a focus on algorithms, data structures, and software engineering principles.',
+    },
+    {
+        type: 'degree',
+        year: '2019 — 2023',
+        institution: 'Liceul Teoretic "Avram Iancu", Cluj-Napoca',
+        title: 'High School Diploma',
+        desc: 'Completed secondary education with a strong foundation in mathematics and sciences.',
+    },
+];
+export const CERTIFICATIONS = [
+    {
+        issuer: 'HarvardX',
+        title: "CS50's Introduction to AI with Python",
+        year: 'Completed',
+        desc: 'Machine Learning and AI with Python.',
+    },
+    {
+        issuer: 'HarvardX',
+        title: "CS50's Introduction to Computer Science",
+        year: 'Completed',
+        desc: 'Foundations of Computer Science and programming.',
+    },
+    {
+        issuer: 'Oracle Academy',
+        title: 'Database Programming with SQL',
+        year: 'Completed',
+        desc: 'Database programming, querying, and management.',
+    },
+    {
+        issuer: 'Anthropic',
+        title: 'Anthropic AI Course',
+        year: 'Completed',
+        desc: 'Advanced prompt engineering and AI integration concepts.',
+    },
+];

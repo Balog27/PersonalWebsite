@@ -1,28 +1,7 @@
 import type { Metadata } from 'next';
-import { Manrope, Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import SiteShell from '@/components/SiteShell';
 import { ThemeProvider } from '@/components/ThemeProvider';
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600'],
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  weight: ['300', '400', '500', '600'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'David-George Balog — Software Developer',
@@ -38,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={true}>
-          {children}
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem={true}>
+          <SiteShell>{children}</SiteShell>
         </ThemeProvider>
       </body>
     </html>
