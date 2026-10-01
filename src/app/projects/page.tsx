@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { PROJECTS } from '@/data/portfolio';
 
-export const metadata = { title: 'Projects — David-George Balog' };
+export const metadata = { title: 'Projects, David George Balog' };
 
 export default function Projects() {
     return (

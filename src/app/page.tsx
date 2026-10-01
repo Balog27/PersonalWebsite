@@ -5,18 +5,18 @@ export default function Home() {
         <main id="main" className="home-main">
             <div className="home-content">
                 <p className="eyebrow">Software Developer &amp; Freelancer</p>
-                <h1>David-George Balog</h1>
+                <h1>David George Balog</h1>
                 <div className="intro">
                     <p>
-                        Hi, I’m David — a software developer and freelancer based in Cluj-Napoca.
+                        Hi, I’m David, a software developer and freelancer based in Cluj Napoca.
                         I build web and mobile products where a clear idea, a solid technical foundation,
                         and a carefully considered experience meet. From the first conversation to a polished
                         launch, I enjoy turning ambitious ideas into software people can use and trust.
                     </p>
                     <p>
-                        I’m currently studying Computer Science while developing full-stack platforms,
-                        AI-powered tools, and freelance projects. I care about clean architecture, clear
-                        interfaces, and practical solutions to real problems — the details that make software
+                        I’m currently studying Computer Science while developing full stack platforms,
+                        AI powered tools, and freelance projects. I care about clean architecture, clear
+                        interfaces, and practical solutions to real problems. These are the details that make software
                         feel effortless and genuinely useful.
                     </p>
                 </div>
