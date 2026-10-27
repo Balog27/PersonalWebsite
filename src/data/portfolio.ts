@@ -1,6 +1,8 @@
 export const PROJECTS = [
     {
         id: 'atelier-luchito',
+        summary: 'An online shop covering product discovery, checkout, and order management.',
+        focus: 'Connecting product variants, customer accounts, and shopping carts with a catalogue and order administration workflow. Convex handles application data and Clerk handles sign in.',
         tag: 'Online shop / React',
         title: 'ATELIER LUCHITO',
         description: 'An online shop with product colour and size variants, category filtering, guest and signed in shopping carts, and cash on delivery checkout. It includes an administration panel for managing the catalogue and orders. Convex handles the database and server logic, while Clerk provides authentication.',
@@ -10,6 +12,8 @@ export const PROJECTS = [
     },
     {
         id: 'quietscore',
+        summary: 'Making environmental noise data easier to understand when exploring a property.',
+        focus: 'Bringing official noise maps into a reproducible PostGIS data pipeline and a bilingual web interface. The platform distinguishes long term modelled noise from live measurements and makes data coverage explicit.',
         tag: 'Geospatial / Full stack',
         title: 'QUIETSCORE',
         description: 'A property noise guidance platform that turns official environmental noise maps into an understandable QuietScore, starting with Cluj Napoca. It combines a bilingual React interface, a Fastify API, and a reproducible geospatial data pipeline backed by PostgreSQL and PostGIS. It reports long term modelled noise rather than live measurements, with clear data coverage and provenance.',
@@ -19,6 +23,8 @@ export const PROJECTS = [
     },
     {
         id: 'zetta-cars',
+        summary: 'Vehicle rentals and airport transfers in one multilingual platform.',
+        focus: 'Connecting route distance calculations, dynamic pricing, and administrative controls across a rental and transfer service. Mapbox and Google Maps support the distance calculations.',
         tag: 'Full stack / Next.js',
         title: 'ZETTACARS',
         description: 'A comprehensive, multilingual vehicle rental and airport transfer platform. It features live dynamic pricing, administrative controls, and seamless iOS integration to deliver a premium user experience. It uses a robust backend, advanced Mapbox and Google Maps distance calculations, and scalable architecture.',
@@ -29,9 +35,11 @@ export const PROJECTS = [
     },
     {
         id: 'fridge-ai',
+        summary: 'Tracking food at home and finding recipes that use what is already available.',
+        focus: 'Combining a mobile and web interface with image recognition, inventory tracking, and recipe suggestions based on available ingredients.',
         tag: 'Mobile and web AI app',
         title: 'FRIDGE AI',
-        description: 'A dual mobile and web application powered by machine learning that intelligently catalogs your refrigerator inventory. It tracks ingredient stock levels, monitors expiration dates, and leverages AI to generate custom intuitive recipe suggestions strictly based on your available items.',
+        description: 'A mobile and web application for keeping track of food in the fridge. It records ingredients, tracks stock and expiration dates, and uses AI to suggest recipes based on the items available.',
         tech: ['React Native', 'Next.js', 'Python / AI', 'Vercel', 'Convex', 'MapBox', 'ImageRecognition', 'AppleIntegration'],
         github: 'https://github.com/Balog27/licenta',
         demo: 'https://licenta-balog27.vercel.app',
@@ -39,6 +47,8 @@ export const PROJECTS = [
     },
     {
         id: 'shisha-app',
+        summary: 'A mobile shopping and rental experience with order tracking and administration.',
+        focus: 'Supporting both customer and administration workflows in React Native, from browsing and ordering to maintaining the product catalogue and tracking order status.',
         tag: 'Mobile / React Native',
         title: 'SHISHA APP',
         description: 'A complete online shop and rental mobile app for shisha enthusiasts, built with React Native and Expo. It includes product browsing with sorting, a shopping cart, order history with live status tracking, user profiles, and an administration panel for catalogue management. The interface uses a sleek dark theme.',
@@ -49,6 +59,8 @@ export const PROJECTS = [
     },
     {
         id: 'bike-shop',
+        summary: 'A motorbike shop built around search, product browsing, and a shopping cart.',
+        focus: 'Building the core online shopping flow with Flask, including filtered product listings, pagination, account authentication, and cart management.',
         tag: 'Online shop / Flask',
         title: 'BIKESHOP',
         description: 'A Flask web application for a motorbike shop with search, filtering, pagination, cart management, and user authentication.',
@@ -59,6 +71,8 @@ export const PROJECTS = [
     },
     {
         id: 'youtube-to-spotify',
+        summary: 'Moving songs from a YouTube playlist into a Spotify account.',
+        focus: 'Connecting the YouTube and Spotify APIs in a Python and Flask application to extract song information and add songs to a Spotify account.',
         tag: 'API / Python',
         title: 'YOUTUBE_TO_SPOTIFY',
         description: 'Extracts song information from YouTube playlists and adds the songs to a Spotify account using Python, Flask, Spotipy, Google APIs, and yt-dlp.',

@@ -18,6 +18,16 @@ export default function BikeAnimation() {
 
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         const images: HTMLImageElement[] = [];
+        function loadFrames() {
+            const count = reducedMotion.matches ? 1 : TOTAL_FRAMES;
+            for (let index = images.length; index < count; index++) {
+                const image = new Image();
+                image.decoding = 'async';
+                image.onload = () => { if (index === Math.round(currentFrame)) draw(true); };
+                images.push(image);
+                image.src = framePath(index);
+            }
+        }
         let targetFrame = 0;
         let currentFrame = 0;
         let lastTime = 0;
@@ -75,13 +85,8 @@ export default function BikeAnimation() {
             }
         }
 
-        for (let index = 0; index < TOTAL_FRAMES; index++) {
-            const image = new Image();
-            image.decoding = 'async';
-            image.onload = () => { if (index === Math.round(currentFrame)) draw(true); };
-            images.push(image);
-            image.src = framePath(index);
-        }
+        loadFrames();
+        const handleMotionChange = () => { loadFrames(); scheduleUpdate(); };
 
         window.addEventListener('scroll', scheduleUpdate, { passive: true });
         const handleResize = () => {
@@ -89,14 +94,14 @@ export default function BikeAnimation() {
             scheduleUpdate();
         };
         window.addEventListener('resize', handleResize);
-        reducedMotion.addEventListener('change', scheduleUpdate);
+        reducedMotion.addEventListener('change', handleMotionChange);
         scheduleUpdate();
         return () => {
             disposed = true;
             cancelAnimationFrame(request);
             window.removeEventListener('scroll', scheduleUpdate);
             window.removeEventListener('resize', handleResize);
-            reducedMotion.removeEventListener('change', scheduleUpdate);
+            reducedMotion.removeEventListener('change', handleMotionChange);
             images.forEach(image => { image.onload = null; });
         };
     }, []);
@@ -104,7 +109,7 @@ export default function BikeAnimation() {
     return <section ref={sectionRef} className="bike-scroll" aria-label="Motorcycle scroll animation">
         <figure className="bike-sticky">
             <canvas ref={canvasRef} role="img" aria-label="Motorcycle animation controlled by scrolling" />
-            <figcaption>Scroll to discover more about me.</figcaption>
+            <figcaption>Scroll to discover more about me. <a href="#main" className="bike-skip">Skip intro</a></figcaption>
         </figure>
     </section>;
 }

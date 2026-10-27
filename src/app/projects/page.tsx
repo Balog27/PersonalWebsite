@@ -8,7 +8,7 @@ export default function Projects() {
         <main id="main" className="inner-page projects-page">
             <header className="projects-heading">
                 <div>
-                    <p className="eyebrow">Selected work · {PROJECTS.length} projects</p>
+                    <p className="eyebrow">Project archive · {PROJECTS.length} projects</p>
                     <h1>Projects with<br />a story to tell.</h1>
                 </div>
                 <p className="page-lead">
@@ -25,6 +25,7 @@ export default function Projects() {
                             <span className="project-identity">
                                 <span className="premium-project-title">{project.title.replaceAll('_', ' ')}</span>
                                 <span className="premium-project-tag">{project.tag}</span>
+                                <span className="project-summary">{project.summary}</span>
                             </span>
                             <span className="project-stack-preview">{project.tech.slice(0, 3).join(' · ')}</span>
                             <span className="project-disclosure">
@@ -37,6 +38,7 @@ export default function Projects() {
                             <div className="project-story">
                                 <p className="project-body-label">Project overview</p>
                                 <p className="project-description">{project.description}</p>
+                                <div className="project-context"><p className="project-body-label">Technical focus</p><p>{project.focus}</p></div>
 
                                 <div className="project-details-grid">
                                     <div>

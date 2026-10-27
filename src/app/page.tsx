@@ -8,16 +8,16 @@ export default function Home() {
                 <h1>David George Balog</h1>
                 <div className="intro">
                     <p>
-                        Hi, I’m David, a software developer and freelancer based in Cluj Napoca.
-                        I build web and mobile products where a clear idea, a solid technical foundation,
-                        and a carefully considered experience meet. From the first conversation to a polished
-                        launch, I enjoy turning ambitious ideas into software people can use and trust.
+                        Hi, I’m David, a software developer and freelancer in Cluj Napoca.
+                        My work ranges from business applications in C# and .NET to web and mobile
+                        products built with React. I enjoy figuring out how a product should work,
+                        then building the pieces that bring it to life.
                     </p>
                     <p>
-                        I’m currently studying Computer Science while developing full stack platforms,
-                        AI powered tools, and freelance projects. I care about clean architecture, clear
-                        interfaces, and practical solutions to real problems. These are the details that make software
-                        feel effortless and genuinely useful.
+                        Alongside studying Computer Science, I work on freelance projects and explore
+                        ideas of my own, from rental platforms to tools that use AI. I like work that
+                        connects a useful idea with a clear interface, and gives me something new to learn.
+                        Away from the editor, you’ll find another interest of mine: motorcycles.
                     </p>
                 </div>
                 <nav className="home-nav" aria-label="Explore">
@@ -26,9 +26,10 @@ export default function Home() {
                     <Link href="/education">Education &amp; Skills</Link>
                     <Link href="/projects">Projects</Link>
                 </nav>
+                <div className="home-actions"><a className="text-link cv-link" href="mailto:david27balogg@yahoo.com">Get in touch</a>
                 <a className="text-link cv-link" href="/cv.pdf" download="David-George-Balog-CV.pdf">
                     Download CV
-                </a>
+                </a></div>
             </div>
         </main>
     );
