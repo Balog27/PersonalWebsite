@@ -1,14 +1,33 @@
-export const PROJECTS = [
+type Project = {
+    id: string;
+    title: string;
+    summary: string;
+    focus: string;
+    tag: string;
+    description: string | string[];
+    tech: string[];
+    github: string;
+    demo: string | null;
+    image?: { src: string; width: number; height: number };
+    visual?: 'neural' | 'mesh';
+};
+
+export const PROJECTS: Project[] = [
     {
         id: 'atelier-luchito',
         summary: 'An online shop covering product discovery, checkout, and order management.',
         focus: 'Connecting product variants, customer accounts, and shopping carts with a catalogue and order administration workflow. Convex handles application data and Clerk handles sign in.',
         tag: 'Online shop / React',
         title: 'ATELIER LUCHITO',
-        description: 'An online shop with product colour and size variants, category filtering, guest and signed in shopping carts, and cash on delivery checkout. It includes an administration panel for managing the catalogue and orders. Convex handles the database and server logic, while Clerk provides authentication.',
+        description: [
+            'Atelier Luchito is an online shop for Japanese woodworking tools, including saws, chisels, and marking tools. Shoppers can browse the full catalogue or start with a category, then use filters such as price and size to narrow the selection. Product pages give them a place to check the available options before choosing a tool.',
+            'The shopping flow covers product selection, cart management, and checkout. Customers can add tools to their cart as guests or sign in to use an account. At checkout they provide their delivery details and can choose cash on delivery.',
+            'The shop has a separate administration panel for maintaining the catalogue and managing incoming orders. That gives staff a place to update the products customers see and handle orders after checkout.',
+        ],
         tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Convex', 'Clerk'],
         github: 'https://github.com/Balog27/Atelier-Luchiano',
-        demo: null,
+        demo: 'https://atelierluchito.ro/',
+        image: { src: '/projects/atelier-luchito.jpg', width: 1600, height: 950 },
     },
     {
         id: 'quietscore',
@@ -16,7 +35,11 @@ export const PROJECTS = [
         focus: 'Bringing official noise maps into a reproducible PostGIS data pipeline and a bilingual web interface. The platform distinguishes long term modelled noise from live measurements and makes data coverage explicit.',
         tag: 'Geospatial / Full stack',
         title: 'QUIETSCORE',
-        description: 'A property noise guidance platform that turns official environmental noise maps into an understandable QuietScore, starting with Cluj Napoca. It combines a bilingual React interface, a Fastify API, and a reproducible geospatial data pipeline backed by PostgreSQL and PostGIS. It reports long term modelled noise rather than live measurements, with clear data coverage and provenance.',
+        description: [
+            'QuietScore helps buyers and renters understand what official noise maps say about a property. Starting with Cluj Napoca, it connects an address to the available mapped noise bands and turns those readings into a score that people can use when comparing locations.',
+            'The website presents results in English and Romanian and explains the source of the data, what the score represents, and whether the location is covered. The maps describe long term modelled conditions. When the maps lack data for an address, the report shows that gap so a user can distinguish it from a quiet location.',
+            'The project also includes a browser extension prototype for looking up an address and reviewing the noise evidence. It gives people a way to check a location while researching properties, with the full report available on the website.',
+        ],
         tech: ['React', 'TypeScript', 'Fastify', 'PostgreSQL', 'PostGIS', 'Supabase'],
         github: 'https://github.com/Balog27/QuietScore',
         demo: null,
@@ -27,11 +50,30 @@ export const PROJECTS = [
         focus: 'Connecting route distance calculations, dynamic pricing, and administrative controls across a rental and transfer service. Mapbox and Google Maps support the distance calculations.',
         tag: 'Full stack / Next.js',
         title: 'ZETTACARS',
-        description: 'A comprehensive, multilingual vehicle rental and airport transfer platform. It features live dynamic pricing, administrative controls, and seamless iOS integration to deliver a premium user experience. It uses a robust backend, advanced Mapbox and Google Maps distance calculations, and scalable architecture.',
+        description: [
+            'Zetta Cars brings vehicle rentals and airport transfers together on one multilingual website. For a rental, customers enter their pickup and return dates, times, and locations. They can then see which vehicles are available for that trip and review the price before choosing a car and booking.',
+            'Travellers who need a driver can use a separate airport transfer form. The transfer flow takes the pickup and destination into account when working out the route distance and price. This lets customers review the cost of their specific trip before booking.',
+            'The platform includes administrative controls for the rental and transfer services, as well as iOS integration. The two booking flows give customers a clear starting point based on whether they need a car for several days or a ride to a destination.',
+        ],
         tech: ['Next.js', 'Convex', 'Mapbox', 'Google Maps', 'Resend', 'APIs'],
-        github: 'https://github.com/Balog27/Zettacarrental', // Using demo for github if no github provided
+        github: 'https://github.com/Balog27/Zettacarrental',
         demo: 'https://www.zettacarrental.com/',
-        image: '/projects/zetta-cars.png',
+        image: { src: '/projects/zetta-cars.png', width: 2880, height: 1530 },
+    },
+    {
+        id: 'chei-cluj',
+        summary: 'A local workshop website for key copying, access cards, and knife sharpening.',
+        focus: 'Organising services, prices, opening hours, and location details into a clear responsive interface. The React and TypeScript application uses Vite and styled-components, with prerendering for the public pages.',
+        tag: 'Business website / React',
+        title: 'CHEICLUJ.RO',
+        description: [
+            'CheiCluj.ro is the website for Master Key & Blade, a workshop in Cluj Napoca that copies keys and access cards and sharpens knives. Visitors can check which types of keys, cards, and knives the workshop handles and see the listed prices before deciding to stop by.',
+            'The site brings opening hours, the workshop address, map directions, and common questions together. Someone looking it up on their phone can quickly check whether the workshop is open, what to bring, and how to get there.',
+        ],
+        tech: ['React', 'TypeScript', 'Vite', 'styled-components', 'React Router'],
+        github: 'https://github.com/Balog27/CheiAri',
+        demo: 'https://cheicluj.ro/',
+        image: { src: '/projects/chei-cluj.jpg', width: 1741, height: 824 },
     },
     {
         id: 'fridge-ai',
@@ -43,7 +85,7 @@ export const PROJECTS = [
         tech: ['React Native', 'Next.js', 'Python / AI', 'Vercel', 'Convex', 'MapBox', 'ImageRecognition', 'AppleIntegration'],
         github: 'https://github.com/Balog27/licenta',
         demo: 'https://licenta-balog27.vercel.app',
-        image: '/projects/fridge-ai.png',
+        image: { src: '/projects/fridge-ai.png', width: 1024, height: 1024 },
     },
     {
         id: 'shisha-app',
